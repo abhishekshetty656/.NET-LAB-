@@ -1,0 +1,27 @@
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace WebApplication3.Controllers
+{
+    public class RegisterController : Controller
+    {
+        public IActionResult Index()
+        {
+            return View();
+        }
+        [HttpPost]
+
+        public IActionResult Index(Models.Register user)
+        {
+            if (ModelState.IsValid)
+            {
+
+                return Content(
+                    $"Registration Successful! Name: {user.Name}, Email: {user.Email}, Age: {user.Age}"
+                    );
+            }
+                      
+                return View(user);
+            }
+        }
+}
+

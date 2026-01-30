@@ -1,0 +1,28 @@
+﻿@model WebApplication3.Models.Register
+
+<h2>Register Form</h2>
+
+<form asp-action="Index" method="post">
+
+    <label>Name </label><br />
+    <input asp-for="Name" />
+    <span asp-validation-for="Name"></span><
+    
+    <label>Email ></label>
+    <input asp-for="Email" />
+    <span asp-validation-for="Email"></span>
+  
+    <label>Password ></label>
+    <input asp-for="Password" />
+    <span asp-validation-for="Password"></span>
+
+    <label>Age </label>
+    <input asp-for="Age" />
+    <span asp-validation-for="Age" style="color:red;"></span>
+
+    <button type="submit">Register</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
